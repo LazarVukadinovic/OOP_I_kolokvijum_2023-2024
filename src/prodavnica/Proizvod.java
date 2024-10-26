@@ -14,7 +14,7 @@ public abstract class Proizvod implements IUporediv {
 
     @Override
     public String toString() {
-        return naziv + " - " + cena;
+        return  "[" + naziv + " - " + cena + "]";
     }
 
     @Override
