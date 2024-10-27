@@ -1,7 +1,7 @@
 package prodavnica;
 
 public class Namirnica extends Proizvod{
-    private int brKomada;
+    protected int brKomada;
 
     public Namirnica(String naziv, double cena){
         super(naziv, cena);
