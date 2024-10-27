@@ -5,7 +5,7 @@ import izuzeci.RinfuzNaAkcijiException;
 public class AkcijskiProizvod extends Namirnica{
     private double akcija;
 
-    public AkcijskiProizvod(Namirnica namirnica, double akcija) throws VecNaAkcijiException, RinfuzNaAkcijiException {
+    public AkcijskiProizvod(Namirnica namirnica, double popust) throws VecNaAkcijiException, RinfuzNaAkcijiException {
 //        if(namirnica instanceof Rinfuz) {
 //            throw new RinfuzNaAkcijiException();
 //        }
@@ -13,7 +13,7 @@ public class AkcijskiProizvod extends Namirnica{
 //            throw new VecNaAkcijiException();
 //        }
         super(namirnica.naziv, namirnica.cena, namirnica.brKomada); //?
-        this.akcija = this.ObracunajAkciju();
+        this.akcija = this.ObracunajAkciju(popust);
     }
 
     public AkcijskiProizvod(AkcijskiProizvod akcijskiProizvod, int brKomada) {
@@ -21,8 +21,8 @@ public class AkcijskiProizvod extends Namirnica{
         this.akcija = akcijskiProizvod.akcija;
     }
 
-    private double ObracunajAkciju(){
-        return this.cena * (1 - this.akcija / 100);
+    private double ObracunajAkciju(double popust){
+        return this.cena * (1 - popust / 100);
     }
 
     public double dajCenuBezPopusta() {
